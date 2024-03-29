@@ -11,10 +11,17 @@ function signup(){
 
     const handler = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3001/register', { email, username, password })
-        .then((res) => {console.log(res)})
-        .catch((err) => {console.log(err)});
-        navigate('/signin');
+        if(!email || !username || !password){
+            if(!email){
+
+            }
+        }else{
+            axios.post('http://localhost:3001/register', { email, username, password })
+            .then((res) => {console.log(res)})
+            .catch((err) => {console.log(err)});
+            navigate('/signin');
+        }
+        
     };
 
     return (
@@ -26,22 +33,25 @@ function signup(){
                 <h2 className='text-dark mb-5'>Sign Up</h2>
             </div>
             
-            <div className="input-group mb-4">
+            <div className="input-group mb-4 ">
                 <input type="email" className="form-control border border-dark" 
                     aria-label="Sizing example input"  
                     aria-describedby="inputGroup-sizing-default" 
                     placeholder='Email'
                     onChange={(e)=>setEmail(e.target.value)}/>
+                    <div className='fs-5'></div>
             </div>
             <div className="input-group mb-4">
                 
                 <input type="text" className="form-control border border-dark" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" 
                 placeholder='Username'  onChange={(e)=>setUserName(e.target.value)}/>
+                <div></div>
             </div>
             <div className="input-group mb-4">
                 
                 <input type="password" className="form-control border border-dark" aria-label="Sizing example input" 
                 aria-describedby="inputGroup-sizing-default" placeholder='Password'  onChange={(e)=>setPassword(e.target.value)}/>
+                <div></div>
             </div>
             <div className="d-grid gap-2">
                 <button className="btn btn-primary" type="submit">Sign up</button>

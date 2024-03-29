@@ -6,7 +6,7 @@ function dashboard(){
            <div>
                 <div>
                     <nav className="navbar fixed-top bg-dark ">
-                        <div className="d-flex justify-content-evenly">
+                        <div className="position-relative d-flex justify-content-evenly">
                             <div className="container-fluid">
                                 <a className="navbar-brand text-white" href="#">Fixed top</a>
                             </div>
